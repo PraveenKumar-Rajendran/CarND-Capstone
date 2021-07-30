@@ -52,7 +52,7 @@ class TLDetector(object):
         self.state_count = 0
         self.waypoints_2d = None
         self.waypoint_tree = None
-        
+
         rospy.spin()
 
     def pose_cb(self, msg):

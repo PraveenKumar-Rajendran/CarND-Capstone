@@ -23,8 +23,8 @@ as well as to verify your TL classifier.
 TODO (for Yousuf and Aaron): Stopline location for each traffic light.
 '''
 
-LOOKAHEAD_WPS = 200 # Number of waypoints we will publish. You can change this number
-MAX_DECEL = .5
+LOOKAHEAD_WPS = 40 # Number of waypoints we will publish. You can change this number
+MAX_DECEL = .5 
 
 
 class WaypointUpdater(object):
@@ -128,6 +128,8 @@ class WaypointUpdater(object):
             
             p.twist.twist.linear.x = min(vel, wp.twist.twist.linear.x)
             temp.append(p)
+
+        return temp
 
     def pose_cb(self, msg):
         # TODO: Implement
